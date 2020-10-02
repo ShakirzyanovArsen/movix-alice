@@ -1,0 +1,100 @@
+.remote-holder * {
+	font-family: DejaVu Sans, Symbola, Everson Mono, Dingbats, Segoe UI Symbol,
+	Quivira, SunExt-A, FreeSerif, Universalia, unifont !important;
+}
+.round-btn {
+	padding: 17px 17px;
+	margin: 10px 2px;
+}
+
+.vertical-btn {
+	padding: 17px 17px;
+	margin: 2px 2px;
+}
+
+.menu {
+	background-color: black;
+	border-radius: 15%;
+	color: white;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	box-shadow: 3px 3px 5px #333;
+	padding: 10px 10px;
+	margin: 10px 2px;
+}
+
+button[class*="btn"]{
+	background-color: black;
+	border-radius: 100%;
+	color: white;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	box-shadow: 3px 3px 5px #333;
+}
+button:active {
+	box-shadow: none;
+}
+p {
+	color: white
+}
+
+.remote {
+	text-align: center;
+	align: center;
+	background-color: #262626;
+	max-width: 350px;
+	min-height: 800px;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 15% 15% 25% 25%;
+	transform: perspective(100px) rotateX(- 1deg);
+}
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+.row-el {
+	flex-grow: 1;
+	min-width: 25%;
+	align-self: center;
+}
+.row-el {
+	flex-grow: 1;
+	min-width: 10%;
+	align-self: center;
+}
+.vertical {
+	columns: 1 auto;
+}
+.quarter1 {
+	top: 0;
+	left: 0;
+	border-radius: 100% 0 0 0;
+}
+.quarter2 {
+	top: 0;
+	right: 0;
+	border-radius: 0 100% 0 0;
+}
+.quarter3 {
+	bottom: 0;
+	left: 0;
+	border-radius: 0 0 0 100%;
+}
+.quarter4 {
+	bottom: 0;
+	right: 0;
+	border-radius: 0 0 100% 0;
+}
