@@ -2,3 +2,5 @@
 test*.py
 Pipfile.lock
 *.pyc
+*.toml
+*.log
