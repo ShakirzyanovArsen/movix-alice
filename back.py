@@ -2,7 +2,7 @@ from flask import Flask
 from flask import request
 from flask import make_response
 from action_conf import action_config
-from actions import text_body
+from actions import simple_text_body
 
 app = Flask(__name__)
 
@@ -32,18 +32,18 @@ def process_dialog(payload):
     tokens = payload.get('nlu').get('tokens')
     for item in action_config:
         if item.issubset(tokens):
-            return action_config[item]()
+            return action_config[item](payload)
     return cant_do_that()
 
 
-@text_body
+@simple_text_body
 def greetings():
     text = 'Привет! Пока что я ничего не умею, но могу сделать бочку! Или штопор!'
     tts = 'Прив+ет! sil <[300]> Пок+а што я ничев+о не ум+ею sil <[100]> но мог+у сд+елать б+очку! sil <[300]> Или шт+опор!'
     return text, tts
 
 
-@text_body
+@simple_text_body
 def cant_do_that():
     text = 'Извините, но я такого не умею...'
     tts = 'Извин+ити но я так+ово не ум+ею'
