@@ -21,8 +21,8 @@ def text_body(parametrized: bool = False):
 
 @text_body()
 def greetings():
-    text = 'Привет! Пока что я ничего не умею, но могу сделать бочку! Или штопор!'
-    tts = 'Прив+ет! sil <[300]> Пок+а што я ничев+о не ум+ею sil <[100]> но мог+у сд+елать б+очку! sil <[300]> Или шт+опор!'
+    text = 'Привет! Со мной вы сможете управлять просмотром при помощи голоса'
+    tts = 'Прив+ет! sil <[300]> Со мной вы см+ожете управл+ять просм+отром при п+омощи г+олоса'
     return text, tts
 
 
@@ -37,13 +37,6 @@ def cant_do_that():
 def do_a_barrel_roll():
     text = 'Вжух!'
     tts = 'Вж+ух!'
-    return text, tts
-
-
-@text_body()
-def do_a_spin():
-    text = 'Фьють!'
-    tts = 'Фь+ють!'
     return text, tts
 
 
@@ -86,7 +79,63 @@ def get_volume_delta(payload):
 
 @text_body()
 def open_menu():
-    mb.menu()
+    mb.send_request(15)
     text = 'Открыла меню'
     tts = 'Откр+ыла мен+ю'
+    return text, tts
+
+
+@text_body()
+def mute():
+    mb.send_request(6)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def pause():
+    mb.send_request(18)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def ok():
+    mb.send_request(9)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def back():
+    mb.send_request(14)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def power():
+    mb.send_request(1)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def power_tv():
+    mb.send_request(3)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def search():
+    mb.send_request(16)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
     return text, tts
