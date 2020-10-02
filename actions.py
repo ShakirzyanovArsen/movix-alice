@@ -1,45 +1,53 @@
 import movix_buttons as mb
 
 
-def simple_text_body(func):
-    def wrapper(payload=None):
-        text, tts = func()
-        return {'response': {
-            'text': text,
-            'tts': tts,
-            'end_session': False
-        }, 'version': '1.0'}
+def text_body(parametrized: bool = False):
+    def decorator(func):
+        def wrapper(payload=None):
+            if parametrized:
+                text, tts = func(payload)
+            else:
+                text, tts = func()
+            return {'response': {
+                'text': text,
+                'tts': tts,
+                'end_session': False
+            }, 'version': '1.0'}
 
-    return wrapper
+        return wrapper
 
-
-def parametrized_text_body(func):
-    def wrapper(payload):
-        text, tts = func(payload)
-        return {'response': {
-            'text': text,
-            'tts': tts,
-            'end_session': False
-        }, 'version': '1.0'}
-
-    return wrapper
+    return decorator
 
 
-@simple_text_body
+@text_body()
+def greetings():
+    text = 'Привет! Пока что я ничего не умею, но могу сделать бочку! Или штопор!'
+    tts = 'Прив+ет! sil <[300]> Пок+а што я ничев+о не ум+ею sil <[100]> но мог+у сд+елать б+очку! sil <[300]> Или шт+опор!'
+    return text, tts
+
+
+@text_body()
+def cant_do_that():
+    text = 'Извините, но я такого не умею...'
+    tts = 'Извин+ити но я так+ово не ум+ею'
+    return text, tts
+
+
+@text_body()
 def do_a_barrel_roll():
     text = 'Вжух!'
     tts = 'Вж+ух!'
     return text, tts
 
 
-@simple_text_body
+@text_body()
 def do_a_spin():
     text = 'Фьють!'
     tts = 'Фь+ють!'
     return text, tts
 
 
-@parametrized_text_body
+@text_body(True)
 def volume_inc(payload):
     vol_delta = get_volume_delta(payload)
     for _ in range(vol_delta):
@@ -49,7 +57,7 @@ def volume_inc(payload):
     return text, tts
 
 
-@parametrized_text_body
+@text_body(True)
 def volume_dec(payload):
     vol_delta = get_volume_delta(payload)
     for _ in range(vol_delta):
@@ -76,7 +84,7 @@ def get_volume_delta(payload):
     return value
 
 
-@simple_text_body
+@text_body()
 def open_menu():
     mb.menu()
     text = 'Открыла меню'
