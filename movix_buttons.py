@@ -6,3 +6,8 @@ def press_volume_plus():
 
 def press_volume_minus():
     pass
+
+
+def press_menu():
+    pass
+

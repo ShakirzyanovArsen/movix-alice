@@ -74,3 +74,11 @@ def get_volume_delta(payload):
     else:
         value = 1
     return value
+
+
+@simple_text_body
+def open_menu():
+    mb.press_menu()
+    text = 'Открыла меню'
+    tts = 'Откр+ыла мен+ю'
+    return text, tts

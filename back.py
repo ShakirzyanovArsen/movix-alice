@@ -15,7 +15,12 @@ def check_no_command(payload):
     return not bool(payload.get('command'))
 
 
-@app.route('/alice/', methods=['POST'])
+@app.route('/api/alice/ping/')
+def ping():
+    return make_response({'ping': 'pong'})
+
+
+@app.route('/api/alice/', methods=['POST'])
 def endpoint():
     req = request.get_json()
     metadata = req.get('meta')
