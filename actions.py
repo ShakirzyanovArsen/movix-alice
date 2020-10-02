@@ -63,7 +63,7 @@ def extract_numbers(payload):
     numbers = []
     for item in payload.get('nlu').get('entities'):
         if item['type'] == 'YANDEX.NUMBER':
-            numbers += item['value']
+            numbers.append(item['value'])
     return numbers
 
 
