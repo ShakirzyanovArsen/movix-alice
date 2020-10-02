@@ -2,7 +2,7 @@ import movix_buttons as mb
 
 
 def simple_text_body(func):
-    def wrapper(payload):
+    def wrapper(payload=None):
         text, tts = func()
         return {'response': {
             'text': text,
