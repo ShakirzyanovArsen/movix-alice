@@ -9,8 +9,12 @@ app = Flask(__name__)
 @app.route('/api/movix/button', methods=['GET'])
 def push_button():
     button_id = request.args.to_dict().get('id')
-    send_request(button_id)
-    return make_response({'status': 'ok'})
+    code = send_request(button_id)
+    if code == 200:
+        resp = make_response({'status': 'ok'})
+    else:
+        resp = make_response({'status': 'ERROR', 'code': code})
+    return resp
 
 
 if __name__ == '__main__':
