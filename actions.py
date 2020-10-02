@@ -43,7 +43,7 @@ def do_a_spin():
 def volume_inc(payload):
     vol_delta = get_volume_delta(payload)
     for _ in range(vol_delta):
-        mb.press_volume_plus()
+        mb.volume_plus()
     text = f'Увеличила громкость на {vol_delta}'
     tts = f'Увил+ичила гр+омкость на {vol_delta}'
     return text, tts
@@ -53,7 +53,7 @@ def volume_inc(payload):
 def volume_dec(payload):
     vol_delta = get_volume_delta(payload)
     for _ in range(vol_delta):
-        mb.press_volume_minus()
+        mb.volume_minus()
     text = f'Уменьшила громкость на {vol_delta}'
     tts = f'Ум+еньшила гр+омкость на {vol_delta}'
     return text, tts
@@ -78,7 +78,7 @@ def get_volume_delta(payload):
 
 @simple_text_body
 def open_menu():
-    mb.press_menu()
+    mb.menu()
     text = 'Открыла меню'
     tts = 'Откр+ыла мен+ю'
     return text, tts

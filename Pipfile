@@ -4,11 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-requests = "*"
 
 [packages]
 flask = "*"
 gunicorn = "*"
+toml = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
