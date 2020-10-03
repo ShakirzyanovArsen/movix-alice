@@ -44,6 +44,7 @@ action_config = {
     frozenset(['выключить', 'приставку']): act.power,
     frozenset(['отключить', 'приставку']): act.power,
     frozenset(['включи', 'телевизор']): act.power_tv,
+    frozenset(['включить', 'телевизор']): act.power_tv,
     frozenset(['выключи', 'телевизор']): act.power_tv,
     frozenset(['выключить', 'телевизор']): act.power_tv,
     frozenset(['отключи', 'телевизор']): act.power_tv,
