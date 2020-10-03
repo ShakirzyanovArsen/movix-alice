@@ -139,3 +139,35 @@ def search():
     text = 'Сделано!'
     tts = 'Сд+елано!'
     return text, tts
+
+
+@text_body()
+def up():
+    mb.send_request(11)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def down():
+    mb.send_request(13)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def left():
+    mb.send_request(10)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts
+
+
+@text_body()
+def right():
+    mb.send_request(12)
+    text = 'Сделано!'
+    tts = 'Сд+елано!'
+    return text, tts

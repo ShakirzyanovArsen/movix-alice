@@ -49,5 +49,11 @@ action_config = {
     frozenset(['отключи', 'телевизор']): act.power_tv,
     frozenset(['отключить', 'телевизор']): act.power_tv,
     frozenset(['открой', 'поиск']): act.search,
-    frozenset(['открыть', 'поиск']): act.search
+    frozenset(['открыть', 'поиск']): act.search,
+    frozenset(['вверх']): act.up,
+    frozenset(['вниз']): act.down,
+    frozenset(['налево']): act.left,
+    frozenset(['влево']): act.left,
+    frozenset(['направо']): act.right,
+    frozenset(['вправо']): act.right,
 }
